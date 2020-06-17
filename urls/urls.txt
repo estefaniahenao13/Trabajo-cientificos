@@ -1,0 +1,7 @@
+consulta a: http://localhost/trabajo_final/index.php?c=CIENTIFICOS&action=consulta_a
+consulta b: http://localhost/trabajo_final/index.php?c=CIENTIFICOS&action=consulta_b
+consulta c: http://localhost/trabajo_final/index.php?c=CIENTIFICOS&action=consulta_c
+consulta d: http://localhost/trabajo_final/index.php?c=CIENTIFICOS&action=consulta_d
+consulta d: http://localhost/trabajo_final/index.php?c=CIENTIFICOS&action=consulta_d_1
+consulta e: http://localhost/trabajo_final/index.php?c=CIENTIFICOS&action=consulta_e
+
