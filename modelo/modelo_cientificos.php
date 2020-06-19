@@ -10,8 +10,8 @@ class Modelocientificos{
         $this->cientificos = array();
     }
 
-    public function get_cientificos_proyecto(){
-        $sql = "SELECT c.DNI, c.Nombre_apellidos, p.Nombre FROM asignado_a a INNER JOIN cientificos c ON a.Cientifico = c.DNI INNER JOIN proyecto p ON a.Proyecto = p.id WHERE p.Nombre = 'investigacion tics'";
+    public function get_cientificos_proyecto($Nombre){
+        $sql = "SELECT c.DNI, c.Nombre_apellidos, p.Nombre FROM asignado_a a INNER JOIN cientificos c ON a.Cientifico = c.DNI INNER JOIN proyecto p ON a.Proyecto = p.id WHERE p.Nombre = '$Nombre'";
         $resultado = $this->bd->query($sql);
         while ($row = $resultado->fetch_assoc()){
 
@@ -22,8 +22,8 @@ class Modelocientificos{
        
     }
 
-    public function get_numero_proyectos(){
-        $sql = " SELECT c.DNI, c.Nombre_apellidos, count(*)as totalProyectos FROM asignado_a a INNER JOIN cientificos c ON a.Cientifico = c.DNI INNER JOIN proyecto p ON a.Proyecto = p.id WHERE c.DNI = 'E'";
+    public function get_numero_proyectos($DNI){
+        $sql = " SELECT c.DNI, c.Nombre_apellidos, count(*)as totalProyectos FROM asignado_a a INNER JOIN cientificos c ON a.Cientifico = c.DNI INNER JOIN proyecto p ON a.Proyecto = p.id WHERE c.DNI = '$DNI'";
         $resultado = $this->bd->query($sql);
         while ($row = $resultado->fetch_assoc()){
 

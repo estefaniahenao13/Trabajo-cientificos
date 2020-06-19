@@ -28,17 +28,13 @@
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 header("HTTP/1.1 200 OK");
                 
-               /* $DNI = $_REQUEST['DNI'];
-                $Nombre_apellidos = $_REQUEST['Nombre_apellidos'];
                 $Nombre = $_REQUEST['Nombre'];
 
                 $arreglo = array();
-                $arreglo['DNI']=$DNI;
-                $arreglo['Nombre_apellidos']=$Nombre_apellidos;
-                $arreglo['Nombre']=$Nombre;*/
+                $arreglo['Nombre']=$Nombre;
 
                 $cientificos = new Modelocientificos();
-                $arreglo= $cientificos->get_cientificos_proyecto();
+                $arreglo= $cientificos->get_cientificos_proyecto($Nombre);
                 echo json_encode($arreglo);
 
             }else{
@@ -51,9 +47,15 @@
 
             if($_SERVER['REQUEST_METHOD'] == 'GET'){
                 header("HTTP/1.1 200 OK");
+
+                $DNI = $_REQUEST['DNI'];
+
+                $arreglo = array();
+                $arreglo['DNI']=$DNI;
+
                 
                 $cientificos = new Modelocientificos();
-                $arreglo= $cientificos->get_numero_proyectos();
+                $arreglo= $cientificos->get_numero_proyectos($DNI);
                 echo json_encode($arreglo);
 
             }else{
